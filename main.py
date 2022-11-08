@@ -34,13 +34,13 @@ def draw_fractal_tree(stp, angle, len, w, angle_count):
     enp = stp[0] + vec[0], stp[1] + vec[1]
 
     line(stp, enp, w, 'green' if w == 1 and len <= 7 else 'brown')
-    draw_fractal_tree(enp, angle, int(len*0.85), int(w*0.9) if w > 1 else 1, angle_count + 15)
+    draw_fractal_tree(enp, angle, int(len*0.825), int(w*0.9) if w > 1 else 1, angle_count + angle)
 
     vec = len * math.cos(-math.radians(angle) + math.radians(angle_count)), len * -math.sin(-math.radians(angle) + math.radians(angle_count))
     enp = stp[0] + vec[0], stp[1] + vec[1]
 
     line(stp, enp, w, 'green' if w == 1 and len <= 7 else 'brown')
-    draw_fractal_tree(enp, angle, int(len*0.85), int(w*0.9) if w > 1 else 1, angle_count - 15)
+    draw_fractal_tree(enp, angle, int(len*0.825), int(w*0.9) if w > 1 else 1, angle_count - angle)
 
 angle = 15
 
